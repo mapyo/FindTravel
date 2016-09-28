@@ -1,14 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#FF9800</color>
-    <color name="colorPrimaryDark">#F57C00</color>
-    <color name="colorAccent">#FF5252</color>
+    <color name="colorPrimary">@color/orange_500</color>
+    <color name="colorPrimaryDark">@color/orange_700</color>
+    <color name="colorAccent">@color/red_a200</color>
 
-    <color name="primary_light">#FFE0B2</color>
-    <color name="primary_text">#212121</color>
-    <color name="secondary_text">#757575</color>
+    <color name="primary_light">@color/orange_100</color>
+    <color name="primary_text">@color/grey_900</color>
+    <color name="secondary_text">@color/grey_600</color>
 
-    <color name="icons">#212121</color>
-    <color name="divider">#BDBDBD</color>
+    <color name="icons">@color/grey_600</color>
+    <color name="divider">@color/grey_400</color>
+
+    <!-- color pallet -->
+
+    <color name="orange_100">#FFE0B2</color>
+    <color name="orange_500">#FF9800</color>
+    <color name="orange_700">#F57C00</color>
+
+    <color name="red_a200">#FF5252</color>
+
+    <color name="grey_400">#BDBDBD</color>
+    <color name="grey_600">#757575</color>
+    <color name="grey_900">#212121</color>
 
 </resources>
