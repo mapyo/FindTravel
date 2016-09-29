@@ -4,12 +4,14 @@ import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.TabLayout;
 import android.support.v4.view.GravityCompat;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
 import com.mapyo.findtravel.databinding.ActivityMainBinding;
+import com.mapyo.findtravel.ui.widget.adapter.MainPagerAdapter;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -31,6 +33,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         toggle.syncState();
 
         binding.navigationView.setNavigationItemSelectedListener(this);
+
+
+        MainPagerAdapter mainPagerAdapter = new MainPagerAdapter(getSupportFragmentManager());
+        binding.viewPager.setAdapter(mainPagerAdapter);
+        binding.tabLayout.setupWithViewPager(binding.viewPager);
+        binding.tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
+
     }
 
     @Override
