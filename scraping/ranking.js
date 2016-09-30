@@ -21,5 +21,9 @@ client.fetch(baseUrl, {  }, function (err, $, res) {
     articleList.push(article);
   });
 
-  console.log(JSON.stringify(articleList));
+  var jsonObject = {};
+  jsonObject.data = articleList;
+  jsonObject.total_count = articleList.length;
+
+  console.log(JSON.stringify(jsonObject));
 });
