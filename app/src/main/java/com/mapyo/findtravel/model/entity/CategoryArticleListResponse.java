@@ -5,6 +5,7 @@ import com.google.gson.annotations.SerializedName;
 import java.util.List;
 
 public class CategoryArticleListResponse {
+    @SerializedName("data")
     private List<Article> articleList;
 
     @SerializedName("total_count")
