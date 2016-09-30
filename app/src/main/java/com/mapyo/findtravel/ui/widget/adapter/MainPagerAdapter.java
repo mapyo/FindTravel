@@ -4,7 +4,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
-import com.mapyo.findtravel.ui.fragment.CategoryFragment;
+import com.mapyo.findtravel.ui.fragment.CategoryArticleFragment;
 
 public class MainPagerAdapter extends FragmentStatePagerAdapter {
     private final String[] TAB_TITLES = {"新着", "特集", "絶景", "グルメ", "沖縄", "東京", "京都"};
@@ -15,7 +15,7 @@ public class MainPagerAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-            return new CategoryFragment.Builder().build();
+            return new CategoryArticleFragment.Builder().build();
     }
 
     @Override

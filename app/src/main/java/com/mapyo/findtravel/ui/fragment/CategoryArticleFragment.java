@@ -7,19 +7,19 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.mapyo.findtravel.R;
-import com.mapyo.findtravel.contract.CategoryContract;
-import com.mapyo.findtravel.presenter.CategoryPresenter;
+import com.mapyo.findtravel.contract.CategoryArticleContract;
+import com.mapyo.findtravel.presenter.CategoryArticlePresenter;
 
-public class CategoryFragment extends Fragment implements CategoryContract.View {
+public class CategoryArticleFragment extends Fragment implements CategoryArticleContract.View {
 
-    private CategoryPresenter presenter;
+    private CategoryArticlePresenter presenter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_category, container, false);
 
         // 本当はcontextは持たせなくないが、assetからjsonファイルを読み込む時に必要なので渡している
-        presenter = new CategoryPresenter(this, getContext());
+        presenter = new CategoryArticlePresenter(this, getContext());
 
         presenter.fetchCategory();
 
@@ -34,7 +34,7 @@ public class CategoryFragment extends Fragment implements CategoryContract.View 
         }
 
         public Fragment build() {
-            CategoryFragment fragment = new CategoryFragment();
+            CategoryArticleFragment fragment = new CategoryArticleFragment();
             fragment.setArguments(mArgs);
             return fragment;
         }
