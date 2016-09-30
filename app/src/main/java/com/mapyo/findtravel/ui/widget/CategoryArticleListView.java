@@ -4,17 +4,17 @@ import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
 
-public class CategoryListView extends RecyclerView {
+public class CategoryArticleListView extends RecyclerView {
 
-    public CategoryListView(Context context) {
+    public CategoryArticleListView(Context context) {
         this(context, null);
     }
 
-    public CategoryListView(Context context, AttributeSet attrs) {
+    public CategoryArticleListView(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public CategoryListView(Context context, AttributeSet attrs, int defStyle) {
+    public CategoryArticleListView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
     }
 }
