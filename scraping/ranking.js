@@ -21,5 +21,5 @@ client.fetch(baseUrl, {  }, function (err, $, res) {
     articleList.push(article);
   });
 
-  console.log(articleList);
+  console.log(JSON.stringify(articleList));
 });
