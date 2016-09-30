@@ -20,7 +20,7 @@ public class CategoryArticleListFragment extends Fragment implements CategoryArt
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_category, container, false);
+        View view = inflater.inflate(R.layout.fragment_category_article_list, container, false);
 
         // 本当はcontextは持たせなくないが、assetからjsonファイルを読み込む時に必要なので渡している
         presenter = new CategoryArticleListPresenter(this, getContext());
