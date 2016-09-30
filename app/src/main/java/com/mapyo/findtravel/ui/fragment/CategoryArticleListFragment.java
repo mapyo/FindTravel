@@ -38,6 +38,7 @@ public class CategoryArticleListFragment extends Fragment implements CategoryArt
 
     @Override
     public void showArticleList(List<Article> articleList) {
+        binding.fragmentCategoryArticleListView.addArticleList(articleList);
     }
 
     public static class Builder {
