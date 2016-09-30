@@ -4,5 +4,6 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="failed_fetch_article">記事の取得に失敗しました</string>
+    <string name="views">%s views</string>
 
 </resources>

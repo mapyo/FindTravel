@@ -31,6 +31,7 @@
                     tools:text="東京の観光スポットランキングBEST62。定番から穴場まで！" />
 
                 <TextView
+                    android:id="@+id/card_article_views"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"

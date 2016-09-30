@@ -59,7 +59,7 @@ public class CategoryArticleListView extends RecyclerView {
         @Override
         public void onBindViewHolder(ArticleViewHolder holder, int position) {
             Article article = articleList.get(position);
-            holder.setArticle(article);
+            holder.bind(article);
         }
 
         @Override
@@ -76,13 +76,13 @@ public class CategoryArticleListView extends RecyclerView {
     }
 
     private class ArticleViewHolder extends RecyclerView.ViewHolder {
-        public ArticleViewHolder(View itemView) {
+        ArticleViewHolder(View itemView) {
             super(itemView);
         }
 
-        public void setArticle(Article article) {
-            CardArticleView cardArticleView = (CardArticleView) itemView;
-            cardArticleView.setUp(article);
+        void bind(Article article) {
+            // todo 大きい画像をセットする時に、ArticleViewを作ってそれを継承するようにする
+            ((CardArticleView) itemView).bindData(article);
         }
     }
 }
