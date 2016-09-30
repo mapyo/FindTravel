@@ -9,6 +9,7 @@ import android.widget.Toast;
 
 import com.mapyo.findtravel.R;
 import com.mapyo.findtravel.contract.CategoryArticleListContract;
+import com.mapyo.findtravel.databinding.FragmentCategoryArticleListBinding;
 import com.mapyo.findtravel.model.entity.Article;
 import com.mapyo.findtravel.presenter.CategoryArticleListPresenter;
 
@@ -17,17 +18,17 @@ import java.util.List;
 public class CategoryArticleListFragment extends Fragment implements CategoryArticleListContract.View {
 
     private CategoryArticleListPresenter presenter;
+    private FragmentCategoryArticleListBinding binding;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_category_article_list, container, false);
+        binding = FragmentCategoryArticleListBinding.inflate(inflater, container, false);
 
         // 本当はcontextは持たせなくないが、assetからjsonファイルを読み込む時に必要なので渡している
         presenter = new CategoryArticleListPresenter(this, getContext());
-
         presenter.fetchCategory();
 
-        return view;
+        return binding.getRoot();
     }
 
     @Override
@@ -37,7 +38,6 @@ public class CategoryArticleListFragment extends Fragment implements CategoryArt
 
     @Override
     public void showArticleList(List<Article> articleList) {
-
     }
 
     public static class Builder {
