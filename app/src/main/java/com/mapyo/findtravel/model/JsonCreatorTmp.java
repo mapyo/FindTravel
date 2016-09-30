@@ -6,7 +6,7 @@ import android.content.res.AssetManager;
 import java.io.IOException;
 import java.io.InputStream;
 
-public class jsonCreator {
+public class JsonCreator {
     public static String readFromAssets(Context context, String fileName) throws IOException {
         AssetManager assetManager = context.getResources().getAssets();
         InputStream inputStream = assetManager.open(fileName);
