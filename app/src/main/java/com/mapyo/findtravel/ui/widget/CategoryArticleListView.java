@@ -32,12 +32,12 @@ public class CategoryArticleListView extends RecyclerView {
         setAdapter(adapter);
         setLayoutManager(new LinearLayoutManager(context));
 
-        // todo 後でmarginを調整する
-        final int marginPixel = getResources().getDimensionPixelSize(R.dimen.margin_tiny);
+        final int marginTinyPixel = getResources().getDimensionPixelSize(R.dimen.margin_tiny);
+        final int marginSmallPixel = getResources().getDimensionPixelSize(R.dimen.margin_small);
         addItemDecoration(new ItemDecoration() {
             @Override
             public void getItemOffsets(Rect outRect, View view, RecyclerView parent, State state) {
-                outRect.set(0, 0, 0, marginPixel);
+                outRect.set(marginTinyPixel, 0, marginTinyPixel, marginSmallPixel);
             }
         });
         setHasFixedSize(true);
