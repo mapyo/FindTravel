@@ -4,7 +4,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
-import com.mapyo.findtravel.ui.fragment.CategoryArticleFragment;
+import com.mapyo.findtravel.ui.fragment.CategoryArticleListFragment;
 
 public class MainPagerAdapter extends FragmentStatePagerAdapter {
     private final String[] TAB_TITLES = {"新着", "特集", "絶景", "グルメ", "沖縄", "東京", "京都"};
@@ -16,7 +16,7 @@ public class MainPagerAdapter extends FragmentStatePagerAdapter {
     @Override
     public Fragment getItem(int position) {
         // todo 余力があればCategoryを渡して表示する内容を切り替えられるようにする
-        return new CategoryArticleFragment.Builder().build();
+        return new CategoryArticleListFragment.Builder().build();
     }
 
     @Override

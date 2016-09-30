@@ -4,7 +4,7 @@ import com.mapyo.findtravel.model.entity.Article;
 
 import java.util.List;
 
-public interface CategoryArticleContract {
+public interface CategoryArticleListContract {
     interface View {
         void showError();
         void showArticleList(List<Article> articleList);
