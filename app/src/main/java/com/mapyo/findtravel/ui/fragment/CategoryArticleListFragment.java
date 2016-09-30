@@ -5,10 +5,14 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.mapyo.findtravel.R;
 import com.mapyo.findtravel.contract.CategoryArticleListContract;
+import com.mapyo.findtravel.model.entity.Article;
 import com.mapyo.findtravel.presenter.CategoryArticleListPresenter;
+
+import java.util.List;
 
 public class CategoryArticleListFragment extends Fragment implements CategoryArticleListContract.View {
 
@@ -24,6 +28,16 @@ public class CategoryArticleListFragment extends Fragment implements CategoryArt
         presenter.fetchCategory();
 
         return view;
+    }
+
+    @Override
+    public void showError() {
+        Toast.makeText(getContext(), R.string.failed_fetch_article, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void showArticleList(List<Article> articleList) {
+
     }
 
     public static class Builder {
