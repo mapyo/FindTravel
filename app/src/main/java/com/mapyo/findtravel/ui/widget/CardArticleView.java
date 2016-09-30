@@ -6,6 +6,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.widget.CardView;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
+import android.view.ViewGroup;
 
 import com.mapyo.findtravel.R;
 import com.mapyo.findtravel.databinding.ViewCardArticleBinding;
@@ -27,10 +28,12 @@ public class CardArticleView extends CardView {
         super(context, attrs, defStyleAttr);
         binding = DataBindingUtil.inflate(LayoutInflater.from(context),
                 R.layout.view_card_article, this, true);
-
     }
 
-    public void bindData(@NonNull Article article) {
+    public void bindData(@NonNull Article article, int imageWidth) {
+        ViewGroup.LayoutParams lp = binding.cardArticleImage.getLayoutParams();
+        lp.width = imageWidth;
+
         Picasso.with(getContext())
                 .load(article.getImage())
                 .placeholder(R.color.grey_100)

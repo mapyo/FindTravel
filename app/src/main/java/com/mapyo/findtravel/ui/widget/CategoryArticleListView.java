@@ -32,12 +32,11 @@ public class CategoryArticleListView extends RecyclerView {
         setAdapter(adapter);
         setLayoutManager(new LinearLayoutManager(context));
 
-        final int marginTinyPixel = getResources().getDimensionPixelSize(R.dimen.margin_tiny);
-        final int marginSmallPixel = getResources().getDimensionPixelSize(R.dimen.margin_small);
+        final int marginPixel = getResources().getDimensionPixelSize(R.dimen.margin_small);
         addItemDecoration(new ItemDecoration() {
             @Override
             public void getItemOffsets(Rect outRect, View view, RecyclerView parent, State state) {
-                outRect.set(marginTinyPixel, 0, marginTinyPixel, marginSmallPixel);
+                outRect.set(marginPixel, 0, marginPixel, marginPixel);
             }
         });
         setHasFixedSize(true);
@@ -53,7 +52,7 @@ public class CategoryArticleListView extends RecyclerView {
         @Override
         public ArticleViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             // todo 大きい画像と普通のcardViewとで場合分けする
-            return new ArticleViewHolder(new CardArticleView(getContext()));
+            return new ArticleViewHolder(new CardArticleView(getContext()), (int) (parent.getWidth() * 0.4));
         }
 
         @Override
@@ -76,13 +75,16 @@ public class CategoryArticleListView extends RecyclerView {
     }
 
     private class ArticleViewHolder extends RecyclerView.ViewHolder {
-        ArticleViewHolder(View itemView) {
+        private int imageWidth;
+
+        ArticleViewHolder(View itemView, int imageWidth) {
             super(itemView);
+            this.imageWidth = imageWidth;
         }
 
         void bind(Article article) {
             // todo 大きい画像をセットする時に、ArticleViewを作ってそれを継承するようにする
-            ((CardArticleView) itemView).bindData(article);
+            ((CardArticleView) itemView).bindData(article, imageWidth);
         }
     }
 }
