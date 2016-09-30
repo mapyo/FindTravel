@@ -7,12 +7,17 @@ client.fetch(baseUrl, {  }, function (err, $, res) {
   var articleList = new Array();
 
   $(".article").each(function (idx) {
+
+    var linkPath = $(this).find('a').attr('href');
+
+    var id = linkPath.slice(linkPath.lastIndexOf('/') + 1);
     var image = $(this).find('.article-image-sq').attr('src');
-    var link = baseUrl + $(this).find('a').attr('href');
+    var link = baseUrl + linkPath;
     var title = $(this).find('.article-title').text().trim();
     var views = $(this).find('.view-count').text();
 
     var article = {};
+    article.id = id;
     article.image = image;
     article.link = link;
     article.title = title;
