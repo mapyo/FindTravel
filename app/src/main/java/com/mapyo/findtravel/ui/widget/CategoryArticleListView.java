@@ -39,7 +39,7 @@ public class CategoryArticleListView extends RecyclerView {
         addItemDecoration(new ItemDecoration() {
             @Override
             public void getItemOffsets(Rect outRect, View view, RecyclerView parent, State state) {
-                outRect.set(marginPixel, 0, marginPixel, marginPixel);
+                outRect.set(0, 0, 0, marginPixel);
             }
         });
         setHasFixedSize(true);
