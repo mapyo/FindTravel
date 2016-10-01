@@ -15,7 +15,6 @@ public class MainPagerAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-        // todo 余力があればCategoryを渡して表示する内容を切り替えられるようにする
         return new CategoryArticleListFragment.Builder(TopTabType.getTopTabType(position)).build();
     }
 
