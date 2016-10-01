@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/card_article_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/card_article_title"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            tools:text="東京の観光スポットランキングBEST62。定番から穴場まで！" />
+
+        <TextView
+            android:id="@+id/card_article_views"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/card_article_title"
+            android:layout_marginBottom="@dimen/margin_small"
+            android:textColor="@color/secondary_text"
+            tools:text="28,713,697 views" />
+
+    </RelativeLayout>
+</layout>
