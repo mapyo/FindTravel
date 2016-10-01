@@ -35,11 +35,19 @@ public class CategoryArticleListView extends RecyclerView {
         setAdapter(adapter);
         setLayoutManager(new LinearLayoutManager(context));
 
-        final int marginPixel = getResources().getDimensionPixelSize(R.dimen.margin_small);
         addItemDecoration(new ItemDecoration() {
             @Override
             public void getItemOffsets(Rect outRect, View view, RecyclerView parent, State state) {
-                outRect.set(0, 0, 0, marginPixel);
+                int marginPixel = getResources().getDimensionPixelSize(R.dimen.margin_small);
+
+                RecyclerView.LayoutParams layoutParams = (RecyclerView.LayoutParams) view.getLayoutParams();
+                int position = layoutParams.getViewAdapterPosition();
+
+                if (position == 0) {
+                    outRect.set(0, 0, 0, marginPixel);
+                } else {
+                    outRect.set(marginPixel, 0, marginPixel, marginPixel);
+                }
             }
         });
         setHasFixedSize(true);

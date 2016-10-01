@@ -4,4 +4,6 @@
     <dimen name="margin_medium">16dp</dimen>
     <dimen name="margin_large">32dp</dimen>
     <dimen name="margin_huge">64dp</dimen>
+
+    <dimen name="card_article_view_height">108dp</dimen>
 </resources>
