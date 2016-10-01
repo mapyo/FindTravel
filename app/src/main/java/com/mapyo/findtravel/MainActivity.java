@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         binding.viewPager.setAdapter(mainPagerAdapter);
         binding.tabLayout.setupWithViewPager(binding.viewPager);
         binding.tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
-
+        binding.viewPager.setCurrentItem(MainPagerAdapter.TAB_NEW_POSITION);
     }
 
     @Override
