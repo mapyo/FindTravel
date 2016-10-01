@@ -17,6 +17,9 @@ import java.util.List;
 public class CategoryArticleListView extends RecyclerView {
     private ArticleAdapter adapter;
 
+    private static final int TYPE_CATEGORY = 0;
+    private static final int TYPE_BIG_IMAGE = 1;
+
     public CategoryArticleListView(Context context) {
         this(context, null);
     }
@@ -46,24 +49,41 @@ public class CategoryArticleListView extends RecyclerView {
         adapter.addArticleList(articleList);
     }
 
-    class ArticleAdapter extends RecyclerView.Adapter<ArticleViewHolder> {
+    private class ArticleAdapter extends RecyclerView.Adapter<ArticleViewHolder> {
         private List<Article> articleList = new ArrayList<>();
+
 
         @Override
         public ArticleViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            // todo 大きい画像と普通のcardViewとで場合分けする
-            return new ArticleViewHolder(new CardArticleView(getContext()), (int) (parent.getWidth() * 0.4));
+            switch (viewType) {
+                case TYPE_CATEGORY:
+                    return new ArticleViewHolder(new CardArticleView(getContext()));
+                case TYPE_BIG_IMAGE:
+                    return new ArticleViewHolder(new BigImageArticleView(getContext()));
+                default:
+                    throw new RuntimeException("ViewType is invalid: " + viewType);
+
+            }
         }
 
         @Override
         public void onBindViewHolder(ArticleViewHolder holder, int position) {
             Article article = articleList.get(position);
-            holder.bind(article);
+            holder.bind(article, getItemViewType(position));
         }
 
         @Override
         public int getItemCount() {
             return articleList.size();
+        }
+
+        @Override
+        public int getItemViewType(int position) {
+            if (position == 0) {
+                return TYPE_BIG_IMAGE;
+            } else {
+                return TYPE_CATEGORY;
+            }
         }
 
         void addArticleList(List<Article> articleList) {
@@ -75,16 +95,20 @@ public class CategoryArticleListView extends RecyclerView {
     }
 
     private class ArticleViewHolder extends RecyclerView.ViewHolder {
-        private int imageWidth;
-
-        ArticleViewHolder(View itemView, int imageWidth) {
+        ArticleViewHolder(View itemView) {
             super(itemView);
-            this.imageWidth = imageWidth;
         }
 
-        void bind(Article article) {
-            // todo 大きい画像をセットする時に、ArticleViewを作ってそれを継承するようにする
-            ((CardArticleView) itemView).bindData(article, imageWidth);
+        void bind(Article article, int itemType) {
+            switch (itemType) {
+                case TYPE_BIG_IMAGE:
+                    ((BigImageArticleView) itemView).bindData(article);
+                    return;
+                case TYPE_CATEGORY:
+                default:
+                    ((CardArticleView) itemView).bindData(article);
+                    return;
+            }
         }
     }
 }
