@@ -2,12 +2,14 @@ package com.mapyo.findtravel.model;
 
 public enum TopTabType {
 
-    NEW_ARRIVAL(0, "新着", "new_arrival.json"),
-    LOVELY_VIEW(1, "絶景", "lovely_view.json"),
-    GOURMET(2, "グルメ", "gourmet.json"),
-    OKINAWA(3, "沖縄", "okinawa.json"),
-    TOKYO(4, "東京", "tokyo.json"),
-    KYOTO(5, "京都", "kyoto.json");
+    // todo 特集用のjsonを作る
+    FEATURE(0, "特集", "new_arrival.json"),
+    NEW_ARRIVAL(1, "新着", "new_arrival.json"),
+    LOVELY_VIEW(2, "絶景", "lovely_view.json"),
+    GOURMET(3, "グルメ", "gourmet.json"),
+    OKINAWA(4, "沖縄", "okinawa.json"),
+    TOKYO(5, "東京", "tokyo.json"),
+    KYOTO(6, "京都", "kyoto.json");
 
 
     private int id;
