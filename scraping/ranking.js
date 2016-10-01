@@ -1,6 +1,6 @@
 var client = require('cheerio-httpcli');
 
-var baseUrl = 'http://find-travel.jp/ranking/yesterday'
+var baseUrl = 'http://find-travel.jp/area/kinki/kyoto'
 
 client.fetch(baseUrl, {  }, function (err, $, res) {
 
