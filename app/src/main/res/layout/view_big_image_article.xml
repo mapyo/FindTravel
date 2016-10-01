@@ -4,7 +4,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="270dp">
+        android:layout_height="200dp">
 
         <ImageView
             android:id="@+id/card_article_image"
@@ -17,6 +17,10 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
+            android:layout_marginBottom="@dimen/margin_small"
+            android:layout_marginLeft="@dimen/margin_small"
+            android:textColor="@color/white"
+            android:textStyle="bold"
             tools:text="東京の観光スポットランキングBEST62。定番から穴場まで！" />
 
         <TextView
@@ -25,7 +29,8 @@
             android:layout_height="wrap_content"
             android:layout_above="@id/card_article_title"
             android:layout_marginBottom="@dimen/margin_small"
-            android:textColor="@color/secondary_text"
+            android:layout_marginLeft="@dimen/margin_small"
+            android:textColor="@color/white"
             tools:text="28,713,697 views" />
 
     </RelativeLayout>
