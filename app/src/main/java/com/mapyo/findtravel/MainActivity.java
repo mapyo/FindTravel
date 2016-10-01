@@ -11,6 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
 import com.mapyo.findtravel.databinding.ActivityMainBinding;
+import com.mapyo.findtravel.model.TopTabType;
 import com.mapyo.findtravel.ui.widget.adapter.MainPagerAdapter;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -38,7 +39,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         binding.viewPager.setAdapter(mainPagerAdapter);
         binding.tabLayout.setupWithViewPager(binding.viewPager);
         binding.tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
-        binding.viewPager.setCurrentItem(MainPagerAdapter.TAB_NEW_POSITION);
+        binding.viewPager.setCurrentItem(TopTabType.NEW_ARRIVAL.getId());
     }
 
     @Override

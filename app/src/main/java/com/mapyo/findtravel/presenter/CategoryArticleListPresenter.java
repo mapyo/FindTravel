@@ -5,6 +5,7 @@ import android.content.Context;
 import com.google.gson.Gson;
 import com.mapyo.findtravel.contract.CategoryArticleListContract;
 import com.mapyo.findtravel.model.JsonCreator;
+import com.mapyo.findtravel.model.TopTabType;
 import com.mapyo.findtravel.model.entity.CategoryArticleListResponse;
 
 import java.io.IOException;
@@ -12,7 +13,6 @@ import java.io.IOException;
 
 public class CategoryArticleListPresenter {
     private final CategoryArticleListContract.View view;
-    private static final String JSON_FILE = "new_arrival.json";
 
     // 本当はcontextは持たせなくないが、assetからjsonファイルを読み込む時に必要なので渡している
     private Context context;
@@ -23,11 +23,11 @@ public class CategoryArticleListPresenter {
         this.context = context;
     }
 
-    public void fetchCategory() {
+    public void fetchCategory(TopTabType topTabType) {
         // ファイルからjson取得
         String jsonString;
         try {
-            jsonString = JsonCreator.readFromAssets(context, JSON_FILE);
+            jsonString = JsonCreator.readFromAssets(context, topTabType.getJsonFile());
         } catch (IOException e) {
             e.printStackTrace();
             jsonString = null;
