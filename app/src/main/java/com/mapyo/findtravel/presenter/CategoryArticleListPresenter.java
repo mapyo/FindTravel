@@ -12,7 +12,7 @@ import java.io.IOException;
 
 public class CategoryArticleListPresenter {
     private final CategoryArticleListContract.View view;
-    private static final String JSON_FILE = "ranking.json";
+    private static final String JSON_FILE = "new_arrival.json";
 
     // 本当はcontextは持たせなくないが、assetからjsonファイルを読み込む時に必要なので渡している
     private Context context;

@@ -13,7 +13,7 @@ public class CategoryArticleListResponseTest {
         Gson gson = new Gson();
         CategoryArticleListResponse response =
                 gson.fromJson(
-                        TestUtils.getAssetFileString("ranking.json"),
+                        TestUtils.getAssetFileString("new_arrival.json"),
                         CategoryArticleListResponse.class
                 );
 
