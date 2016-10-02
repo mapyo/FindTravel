@@ -15,7 +15,11 @@ public class MainPagerAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-        return new CategoryArticleListFragment.Builder(TopTabType.getTopTabType(position)).build();
+        if (TopTabType.getTopTabType(position) == TopTabType.TOPIC) {
+            // todo 特集の表示をするFragmentを作る
+        } else {
+            return new CategoryArticleListFragment.Builder(TopTabType.getTopTabType(position)).build();
+        }
     }
 
     @Override
