@@ -43,7 +43,7 @@ public class TopicListFragment extends Fragment implements TopicListContract.Vie
 
     @Override
     public void showFeatures(List<Feature> features) {
-//        binding.fragmentFeatureListView.addFeatures(features);
+        binding.fragmentFeatureListView.addFeatures(features);
     }
 
     public static class Builder {

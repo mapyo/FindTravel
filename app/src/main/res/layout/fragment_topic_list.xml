@@ -7,30 +7,29 @@
         android:gravity="center_horizontal"
         android:orientation="vertical">
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ピックアップ特集" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="ピックアップ特集" />
+        <com.mapyo.findtravel.ui.widget.PickupFeatureListView
+            android:id="@+id/fragment_pickup_feature_list_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:scrollbars="horizontal" />
 
-            <com.mapyo.findtravel.ui.widget.PickupFeatureListView
-                android:id="@+id/fragment_pickup_feature_list_view"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:clipToPadding="false"
-                android:scrollbars="horizontal" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="その他の特集" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="その他の特集" />
-
-            <!--<com.mapyo.findtravel.ui.widget.FeaturesListView-->
-                <!--android:id="@+id/fragment_feature_list_view"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:clipToPadding="false"-->
-                <!--android:scrollbars="vertical" />-->
+        <com.mapyo.findtravel.ui.widget.FeatureListView
+            android:id="@+id/fragment_feature_list_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:scrollbars="vertical" />
 
     </LinearLayout>
 </layout>
