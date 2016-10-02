@@ -1,0 +1,116 @@
+{
+  "pickup_features": [
+    {
+      "id": "74",
+      "image": "http://find-travel.cdn-dena.com/picture/topic/74/182829/555",
+      "link": "http://find-travel.jp/topic/topic/74"
+    },
+    {
+      "id": "55",
+      "image": "http://find-travel.cdn-dena.com/picture/topic/55/183070/555",
+      "link": "http://find-travel.jp/topic/topic/55"
+    },
+    {
+      "id": "56",
+      "image": "http://find-travel.cdn-dena.com/picture/topic/56/180850/555",
+      "link": "http://find-travel.jp/topic/topic/56"
+    },
+    {
+      "id": "48",
+      "image": "http://find-travel.cdn-dena.com/picture/topic/48/177903/555",
+      "link": "http://find-travel.jp/topic/topic/48"
+    }
+  ],
+  "features": [
+    {
+      "id": "69",
+      "link": "http://find-travel.jp/topic/topic/69",
+      "image": "http://find-travel.cdn-dena.com/picture/topic/69/180285/360",
+      "title": "JRで行く 秋冬の「列車旅」特集"
+    },
+    {
+      "id": "62",
+      "link": "http://find-travel.jp/topic/topic/62",
+      "image": "http://find-travel.cdn-dena.com/picture/topic/62/179127/360",
+      "title": "今夜行きたい。ほっこり銭湯特集"
+    },
+    {
+      "id": "61",
+      "link": "http://find-travel.jp/topic/topic/61",
+      "image": "http://find-travel.cdn-dena.com/picture/topic/61/179108/360",
+      "title": "アートに囲まれてすごす大人の休日【瀬戸内編】"
+    },
+    {
+      "id": "60",
+      "link": "http://find-travel.jp/topic/topic/60",
+      "image": "http://find-travel.cdn-dena.com/picture/topic/60/178932/360",
+      "title": "遊び心いっぱい♪個性派カフェ特集"
+    },
+    {
+      "id": "58",
+      "link": "http://find-travel.jp/topic/topic/58",
+      "image": "http://find-travel.cdn-dena.com/picture/topic/58/178475/360",
+      "title": "並んででも食べたい！パン屋特集"
+    },
+    {
+      "id": "54",
+      "link": "http://find-travel.jp/topic/topic/54",
+      "image": "http://find-travel.cdn-dena.com/picture/topic/54/178001/360",
+      "title": "食べて、飲んで、遊び尽くせ！台湾夜市特集"
+    },
+    {
+      "id": "53",
+      "link": "http://find-travel.jp/topic/topic/53",
+      "image": "http://find-travel.cdn-dena.com/picture/topic/53/177977/360",
+      "title": "ビール好き集まれ！クラフトビールが飲めるお店特集"
+    },
+    {
+      "id": "52",
+      "link": "http://find-travel.jp/topic/topic/52",
+      "image": "http://find-travel.cdn-dena.com/picture/topic/52/177965/360",
+      "title": "ロマンチックなデートにおすすめ♡プラネタリウム特集"
+    },
+    {
+      "id": "51",
+      "link": "http://find-travel.jp/topic/topic/51",
+      "image": "http://find-travel.cdn-dena.com/picture/topic/51/177967/360",
+      "title": "一度は見に行きたい「日本の絶景」まとめ"
+    },
+    {
+      "id": "50",
+      "link": "http://find-travel.jp/topic/topic/50",
+      "image": "http://find-travel.cdn-dena.com/picture/topic/50/178331/360",
+      "title": "東京の下町で味わう 粋なグルメ特集"
+    },
+    {
+      "id": "49",
+      "link": "http://find-travel.jp/topic/topic/49",
+      "image": "http://find-travel.cdn-dena.com/picture/topic/49/177638/360",
+      "title": "一度は泊まってみたい！世界の変わったホテル特集"
+    },
+    {
+      "id": "47",
+      "link": "http://find-travel.jp/topic/topic/47",
+      "image": "http://find-travel.cdn-dena.com/picture/topic/47/176951/360",
+      "title": "早起きが楽しい！東京の美味しい朝ごはん特集"
+    },
+    {
+      "id": "46",
+      "link": "http://find-travel.jp/topic/topic/46",
+      "image": "http://find-travel.cdn-dena.com/picture/topic/46/176759/360",
+      "title": "大阪の魅力に出会う！ディープな大阪特集"
+    },
+    {
+      "id": "45",
+      "link": "http://find-travel.jp/topic/topic/45",
+      "image": "http://find-travel.cdn-dena.com/picture/topic/45/176705/360",
+      "title": "東京を遊び尽くせ！TOKYOナイトスポット特集"
+    },
+    {
+      "id": "44",
+      "link": "http://find-travel.jp/topic/topic/44",
+      "image": "http://find-travel.cdn-dena.com/picture/topic/44/175484/360",
+      "title": "一度は行きたい！キャラカフェ特集"
+    }
+  ]
+}
