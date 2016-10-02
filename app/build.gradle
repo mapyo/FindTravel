@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'deploygate'
 
 android {
     compileSdkVersion 24
@@ -39,4 +40,21 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
+}
+
+deploygate {
+    userName = "mapyo"
+
+    apks {
+        def branch = 'git rev-parse --abbrev-ref HEAD'.execute([], project.rootDir).in.text.trim()
+        def hash = 'git rev-parse --short HEAD'.execute([], project.rootDir).in.text.trim()
+        def commonMessage = System.getenv('MESSAGE') + " ${branch} ${hash}"
+
+        debug {
+            message = commonMessage
+        }
+        release {
+            message = "【production】" + commonMessage
+        }
+    }
 }
