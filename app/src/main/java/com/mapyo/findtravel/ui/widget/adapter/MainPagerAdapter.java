@@ -6,6 +6,8 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 
 import com.mapyo.findtravel.model.TopTabType;
 import com.mapyo.findtravel.ui.fragment.CategoryArticleListFragment;
+import com.mapyo.findtravel.ui.fragment.TopicListFragment;
+
 
 public class MainPagerAdapter extends FragmentStatePagerAdapter {
 
@@ -15,10 +17,11 @@ public class MainPagerAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-        if (TopTabType.getTopTabType(position) == TopTabType.TOPIC) {
-            // todo 特集の表示をするFragmentを作る
-        } else {
-            return new CategoryArticleListFragment.Builder(TopTabType.getTopTabType(position)).build();
+        switch (TopTabType.getTopTabType(position)) {
+            case TOPIC:
+                return new TopicListFragment.Builder().build();
+            default:
+                return new CategoryArticleListFragment.Builder(TopTabType.getTopTabType(position)).build();
         }
     }
 
