@@ -5,6 +5,8 @@ import com.mapyo.findtravel.TestUtils;
 
 import org.junit.Test;
 
+import java.util.List;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class TopicListResponseTest {
@@ -17,9 +19,21 @@ public class TopicListResponseTest {
                         TopicListResponse.class
                 );
 
-        assertThat(response.getPickupFeatures().size()).isNotZero();
-        assertThat(response.getPickupFeatures().get(0)).isInstanceOf(PickupFeature.class);
-        assertThat(response.getFeatures().size()).isNotZero();
-        assertThat(response.getFeatures().get(0)).isInstanceOf(Feature.class);
+        List<PickupFeature> pickupFeatures = response.getPickupFeatures();
+        List<Feature> features = response.getFeatures();
+
+        assertThat(pickupFeatures.size()).isNotZero();
+        assertThat(features.size()).isNotZero();
+
+        PickupFeature pickupFeature = pickupFeatures.get(0);
+        assertThat(pickupFeature.getId()).isNotZero();
+        assertThat(pickupFeature.getImage()).isNotNull();
+        assertThat(pickupFeature.getLink()).isNotNull();
+
+        Feature feature = features.get(0);
+        assertThat(feature.getId()).isNotZero();
+        assertThat(feature.getImage()).isNotNull();
+        assertThat(feature.getLink()).isNotNull();
+        assertThat(feature.getTitle()).isNotNull();
     }
 }
