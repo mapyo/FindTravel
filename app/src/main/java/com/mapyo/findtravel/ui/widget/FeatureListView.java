@@ -5,6 +5,7 @@ import android.graphics.Rect;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -56,7 +57,9 @@ public class FeatureListView extends RecyclerView {
 
         @Override
         public BindingHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            imageWidth = parent.getWidth() / 2;
+            DisplayMetrics metrics = getResources().getDisplayMetrics();
+            imageWidth = (int) (metrics.widthPixels / 2);
+
             return new BindingHolder<>(getContext(), parent, R.layout.view_card_feature);
         }
 
@@ -68,7 +71,7 @@ public class FeatureListView extends RecyclerView {
 
             ViewGroup.LayoutParams params = binding.featureImageView.getLayoutParams();
             params.width = imageWidth;
-            params.width = (int) ((float) imageWidth / 4 * 3);
+            params.height = (int) ((float) imageWidth / 4 * 3);
 
             Picasso.with(getContext())
                     .load(feature.getImage())
