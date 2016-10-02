@@ -2,8 +2,7 @@ package com.mapyo.findtravel.model;
 
 public enum TopTabType {
 
-    // todo 特集用のjsonを作る
-    FEATURE(0, "特集", "new_arrival.json"),
+    FEATURE(0, "特集", "topic.json"),
     NEW_ARRIVAL(1, "新着", "new_arrival.json"),
     LOVELY_VIEW(2, "絶景", "lovely_view.json"),
     GOURMET(3, "グルメ", "gourmet.json"),
