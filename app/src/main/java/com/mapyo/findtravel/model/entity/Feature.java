@@ -1,6 +1,8 @@
 package com.mapyo.findtravel.model.entity;
 
-public class Feature {
+import com.mapyo.findtravel.model.TopicGroup;
+
+public class Feature implements TopicGroup {
     int id;
     String image;
     String link;
@@ -20,5 +22,10 @@ public class Feature {
 
     public String getTitle() {
         return title;
+    }
+
+    @Override
+    public Type getType() {
+        return Type.FEATURE;
     }
 }

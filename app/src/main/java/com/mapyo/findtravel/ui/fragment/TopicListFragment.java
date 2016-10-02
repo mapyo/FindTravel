@@ -38,12 +38,12 @@ public class TopicListFragment extends Fragment implements TopicListContract.Vie
 
     @Override
     public void showPickupFeatures(List<PickupFeature> pickupFeatures) {
-        binding.fragmentPickupFeatureListView.addPickupFeatures(pickupFeatures);
+        binding.fragmentTopicListView.addPickupFeature(pickupFeatures);
     }
 
     @Override
     public void showFeatures(List<Feature> features) {
-        binding.fragmentFeatureListView.addFeatures(features);
+        binding.fragmentTopicListView.addFeature(features);
     }
 
     public static class Builder {

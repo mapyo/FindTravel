@@ -5,12 +5,13 @@ import android.graphics.Rect;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.mapyo.findtravel.R;
+import com.mapyo.findtravel.databinding.ViewCardFeatureBinding;
 import com.mapyo.findtravel.model.entity.Feature;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -49,18 +50,33 @@ public class FeatureListView extends RecyclerView {
         adapter.addFeatures(features);
     }
 
-    private class FeatureAdapter extends Adapter<FeatureViewHolder> {
+    private class FeatureAdapter extends Adapter<BindingHolder> {
         private List<Feature> featureList = new ArrayList<>();
+        private int imageWidth;
 
         @Override
-        public FeatureViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            return FeatureViewHolder.create(parent);
+        public BindingHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+            imageWidth = parent.getWidth() / 2;
+            return new BindingHolder<>(getContext(), parent, R.layout.view_card_feature);
         }
 
         @Override
-        public void onBindViewHolder(FeatureViewHolder holder, int position) {
+        public void onBindViewHolder(BindingHolder holder, int position) {
             Feature feature = featureList.get(position);
-            holder.bind(feature);
+            ViewCardFeatureBinding binding = (ViewCardFeatureBinding) holder.binding;
+            binding.setFeature(feature);
+
+            ViewGroup.LayoutParams params = binding.featureImageView.getLayoutParams();
+            params.width = imageWidth;
+            params.width = (int) ((float) imageWidth / 4 * 3);
+
+            Picasso.with(getContext())
+                    .load(feature.getImage())
+                    .placeholder(R.color.grey_100)
+                    .fit()
+                    .centerCrop()
+                    .error(R.color.grey_100)
+                    .into(binding.featureImageView);
         }
 
         @Override
@@ -73,27 +89,6 @@ public class FeatureListView extends RecyclerView {
             this.featureList.addAll(featureList);
 
             notifyItemRangeInserted(start, featureList.size());
-        }
-    }
-
-    static class FeatureViewHolder extends ViewHolder {
-        int imageWidth;
-
-        FeatureViewHolder(View itemView, int imageWidth) {
-            super(itemView);
-            this.imageWidth = imageWidth;
-        }
-
-        public void bind(Feature feature) {
-            // todo
-        }
-
-        static FeatureViewHolder create(ViewGroup parent) {
-            View v = LayoutInflater.from(parent.getContext())
-                    .inflate(R.layout.view_card_feature, parent, false);
-            int imageWidth = parent.getWidth() / 2;
-
-            return new FeatureViewHolder(v, imageWidth);
         }
     }
 }

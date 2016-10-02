@@ -1,6 +1,8 @@
 package com.mapyo.findtravel.model.entity;
 
-public class PickupFeature {
+import com.mapyo.findtravel.model.TopicGroup;
+
+public class PickupFeature implements TopicGroup {
     int id;
     String image;
     String link;
@@ -15,5 +17,10 @@ public class PickupFeature {
 
     public String getLink() {
         return link;
+    }
+
+    @Override
+    public Type getType() {
+        return Type.FEATURE;
     }
 }
