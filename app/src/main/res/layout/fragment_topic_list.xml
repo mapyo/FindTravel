@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ピックアップ特集" />
+
+            <com.mapyo.findtravel.ui.widget.PickupFeatureListView
+                android:id="@+id/fragment_pickup_feature_list_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:scrollbars="horizontal" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="その他の特集" />
+
+            <!--<com.mapyo.findtravel.ui.widget.FeaturesListView-->
+                <!--android:id="@+id/fragment_feature_list_view"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:clipToPadding="false"-->
+                <!--android:scrollbars="vertical" />-->
+
+    </LinearLayout>
+</layout>

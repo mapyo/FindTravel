@@ -60,7 +60,6 @@ public class CategoryArticleListView extends RecyclerView {
     private class ArticleAdapter extends RecyclerView.Adapter<ArticleViewHolder> {
         private List<Article> articleList = new ArrayList<>();
 
-
         @Override
         public ArticleViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             switch (viewType) {

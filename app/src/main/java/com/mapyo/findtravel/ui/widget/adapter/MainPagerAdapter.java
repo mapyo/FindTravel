@@ -35,4 +35,3 @@ public class MainPagerAdapter extends FragmentStatePagerAdapter {
         return TopTabType.getTopTabType(position).getName();
     }
 }
-
