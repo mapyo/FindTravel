@@ -26,6 +26,8 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        ext.betaDistributionReleaseNotes = getBranch() + getCommitLog()
     }
     buildTypes {
         release {
@@ -75,4 +77,12 @@ deploygate {
             message = "【production】" + commonMessage
         }
     }
+}
+
+static def getCommitLog() {
+    return  'git log -n 1'.execute().text
+}
+
+static def getBranch() {
+    return  'git rev-parse --abbrev-ref HEAD'.execute().text
 }
