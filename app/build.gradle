@@ -1,4 +1,19 @@
+buildscript {
+    repositories {
+        maven { url 'https://maven.fabric.io/public' }
+    }
+
+    dependencies {
+        classpath 'io.fabric.tools:gradle:1.+'
+    }
+}
 apply plugin: 'com.android.application'
+apply plugin: 'io.fabric'
+
+repositories {
+    maven { url 'https://maven.fabric.io/public' }
+}
+
 apply plugin: 'deploygate'
 
 android {
@@ -11,6 +26,8 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        ext.betaDistributionReleaseNotes = getBranch() + getCommitLog()
     }
     buildTypes {
         release {
@@ -40,6 +57,9 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
+    compile('com.crashlytics.sdk.android:crashlytics:2.6.7@aar') {
+        transitive = true;
+    }
 }
 
 deploygate {
@@ -57,4 +77,12 @@ deploygate {
             message = "【production】" + commonMessage
         }
     }
+}
+
+static def getCommitLog() {
+    return  'git log -n 1'.execute().text
+}
+
+static def getBranch() {
+    return  'git rev-parse --abbrev-ref HEAD'.execute().text
 }
