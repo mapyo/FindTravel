@@ -28,6 +28,7 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
         ext.betaDistributionReleaseNotes = getBranch() + getCommitLog()
+        ext.betaDistributionGroupAliases = "testers"
     }
     buildTypes {
         release {
