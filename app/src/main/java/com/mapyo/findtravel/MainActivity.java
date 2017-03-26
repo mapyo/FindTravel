@@ -10,9 +10,11 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
+import com.crashlytics.android.Crashlytics;
 import com.mapyo.findtravel.databinding.ActivityMainBinding;
 import com.mapyo.findtravel.model.TopTabType;
 import com.mapyo.findtravel.ui.widget.adapter.MainPagerAdapter;
+import io.fabric.sdk.android.Fabric;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -21,6 +23,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Fabric.with(this, new Crashlytics());
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
         setSupportActionBar(binding.toolbar);
